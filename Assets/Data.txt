@@ -1,0 +1,36 @@
+PS5 Games:
+- Marvel's Spider-Man: Miles Morales > Be greater. Be yourself.
+			Experience the rise of Miles Morales as the new hero masters incredible,
+			explosive new powers to become his own Spider-Man.
+	price : $49.99
+	link : https://www.playstation.com/en-us/games/marvels-spider-man-miles-morales/
+-------------------------------------------------------------------------------------------------------
+- God of War Ragnarök > Embark on an epic and heartfelt journey as Kratos and Atreus struggle
+			 with holding on and letting go
+	price : $69.99
+	link : https://www.playstation.com/en-us/games/god-of-war-ragnarok/
+-------------------------------------------------------------------------------------------------------
+- The Last of Us™ Part I > Endure and survive. Relive the beloved game 
+			    that started it all, rebuilt for the PlayStation®5 console.
+	price : $69.99
+	link : https://www.playstation.com/en-us/games/the-last-of-us-part-i/
+*******************************************************************************************************
+PS4 Games:
+- Horizon Forbidden West™ > Join Aloy as she braves the Forbidden West – a majestic but
+			    dangerous frontier that conceals mysterious new threats.
+	price : $69.99
+	link : https://www.playstation.com/en-us/games/horizon-forbidden-west/
+-------------------------------------------------------------------------------------------------------
+- UNCHARTED 4: A Thief's End > Every treasure has its price.
+	price : free
+	link : https://www.playstation.com/en-us/games/uncharted-4-a-thiefs-end/
+-------------------------------------------------------------------------------------------------------
+- Gran Turismo® 7 > Gran Turismo 7 brings together the very best features
+		    of the Real Driving Simulator
+	price : $69.99
+	link : https://www.playstation.com/en-us/games/gran-turismo-7/
+*******************************************************************************************************
+Icons :
+ - Controller : <i class="fa-solid fa-gamepad"></i>
+ - Headphone : <i class="fa-solid fa-headphones-simple"></i>
+ - Menu : <i class="fa-solid fa-bars"></i>
