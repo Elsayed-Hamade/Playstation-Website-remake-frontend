@@ -2,9 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-
-  /* Remove */
-  /* border: 1px solid orangered; */
 }
 
 html {
@@ -33,6 +30,14 @@ body {
   color: white;
 }
 
+::-webkit-scrollbar{
+  background: none;
+  width: .5rem;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #c44a76;
+}
 /* HOME */
 .home {
   background-image: url(Assets/Background.png);
