@@ -70,6 +70,10 @@ body {
   background-position: top;
 }
 
+.log-in-btn-small {
+  display: none;
+}
+
 /* HOME -> navbar */
 .navbar {
   width: 100%;
@@ -178,7 +182,7 @@ body {
 
 /* HARDWARE > cards */
 .card {
-  width: 120rem;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -553,6 +557,10 @@ hr {
   font-weight: 500;
 }
 
+.nav-list-footer {
+  flex-wrap: wrap;
+}
+
 /* COOKIE */
 .cookie {
   display: flex;
@@ -599,6 +607,192 @@ hr {
   }
   .card > img,
   .card > .img-2 {
-    width: 30%;
+    width: 20%;
   }
+
+  .carousel {
+    max-width: 70rem;
+  }
+
+  .games-types {
+    flex-direction: column;
+  }
+
+  .games-types > img {
+    width: 70%;
+    margin: 0;
+  }
+
+  .games-types-content {
+    text-align: center;
+    max-width: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+}
+
+.menu-container {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .log-in-btn-small {
+    display: block;
+  }
+
+  .log-in-btn-large {
+    display: none;
+  }
+
+  .list-1 {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    background-color: #2d2d2d;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .list-1.active {
+    right: 0;
+  }
+
+  .list-1-item {
+    margin: 3rem 0;
+  }
+
+  .menu-container {
+    display: block;
+    z-index: 10;
+  }
+
+  .menu {
+    color: white;
+    font-size: 2.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+  .card > img,
+  .card > .img-2 {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .carousel {
+    width: 60rem;
+  }
+  .games-types {
+    padding: 5rem 0;
+  }
+
+  .shop-carousel {
+    max-width: 60%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .home-vr {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .home-vr > img {
+    width: 85%;
+  }
+  .home-description > h1 {
+    font-size: 3rem;
+  }
+
+  .home-description > .home-small-title {
+    line-height: 0;
+    font-size: 1rem;
+    font-weight: normal;
+    letter-spacing: 30px;
+    text-transform: uppercase;
+  }
+
+  .home-description > .home-text {
+    font-size: 1.5rem;
+    width: 30rem;
+  }
+
+  .home > .home-controller {
+    width: 80%;
+    margin-top: 3rem;
+  }
+
+  .title {
+    color: white;
+    text-align: center;
+    margin: 5rem 0;
+    font-size: 1.9rem;
+  }
+
+  .small-title {
+    color: #adadad;
+    line-height: 1;
+  }
+
+  .big-title {
+    font-size: 4rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .big-title {
+    font-size: 3rem;
+  }
+
+  .card > img,
+  .card > .img-2 {
+    width: 55%;
+  }
+
+  .card-content {
+    max-width: 35rem;
+    font-size: 2rem;
+    color: white;
+  }
+
+  .carousel {
+    max-width: 30rem;
+  }
+
+  .games-types > img {
+    width: 80%;
+  }
+  .games-types-content > h1 {
+    font-size: 2rem;
+  }
+
+  .games-types-content > p {
+    font-size: 1rem;
+  }
+
+  .games-types-content > h4 > span {
+    font-size: 1.8rem;
+  }
+
+  .shop-carousel{
+    max-width: 80%;
+  }
+
+  .products-content > h1{
+    font-size: 1.8rem;
+  }
+
+  .cookie{
+    width: 90%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+  }
+
 }
