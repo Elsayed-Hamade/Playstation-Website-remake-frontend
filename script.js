@@ -1,3 +1,4 @@
+// Menu Func.
 const menu = document.querySelector(".menu-container");
 const menuIcon = document.querySelector(".menu");
 
