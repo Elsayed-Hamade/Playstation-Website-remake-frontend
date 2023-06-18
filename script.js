@@ -1,3 +1,4 @@
+"use static";
 // Menu Func.
 const menu = document.querySelector(".menu-container");
 const menuIcon = document.querySelector(".menu");
@@ -11,4 +12,19 @@ menu.addEventListener("click", () => {
   } else {
     menuIcon.className = "fa-solid fa-bars menu";
   }
+});
+
+// Log Close, open
+const logBtn = document.querySelectorAll(".log-btn-activator");
+const logContainer = document.querySelector(".logIn-container");
+const LogClose = document.querySelector(".log-close");
+
+logBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    logContainer.style.display = "flex";
+  });
+});
+
+LogClose.addEventListener("click", () => {
+  logContainer.style.display = "none";
 });
