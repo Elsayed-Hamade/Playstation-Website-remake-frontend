@@ -24,28 +24,34 @@
       <!-- Home Section -->
       <section class="home">
         <nav class="navbar">
-          <a href="#" class="logo">
+          <a href="#home" class="logo">
             <img src="Assets/Logo.svg" alt="Logo" />
           </a>
           <ul class="nav-list list-1">
             <li class="nav-item list-1-item">
-              <a href="#" class="nav-link active">Home</a>
+              <a href="#home" class="nav-link to-home active">Home</a>
             </li>
             <li class="nav-item list-1-item">
-              <a href="#" class="nav-link">Hardware</a>
+              <a href="#hardware" class="nav-link to-hardware">Hardware</a>
             </li>
             <li class="nav-item list-1-item">
-              <a href="#" class="nav-link">Games</a>
+              <a href="#games" class="nav-link to-games">Games</a>
             </li>
             <li class="nav-item list-1-item">
-              <a href="#" class="nav-link">Shop</a>
+              <a href="#shop" class="nav-link to-shop">Shop</a>
             </li>
             <li class="nav-item list-1-item">
-              <a href="#" class="nav-link">Support</a>
+              <a href="#footer" class="nav-link to-support">Support</a>
             </li>
-            <button class="log-in-btn-small list-1-item btn-1 log-btn-activator">Log In</button>
+            <button
+              class="log-in-btn-small list-1-item btn-1 log-btn-activator"
+            >
+              Log In
+            </button>
           </ul>
-          <button class="log-in-btn-large btn-1 log-btn-activator">Log In</button>
+          <button class="log-in-btn-large btn-1 log-btn-activator">
+            Log In
+          </button>
           <div class="menu-container">
             <i class="fa-solid fa-bars menu"></i>
           </div>
@@ -194,7 +200,7 @@
         </div>
       </section>
 
-      <footer class="footer">
+      <section class="footer">
         <div class="footer-content">
           <img src="Assets/Logo.svg" alt="Logo" class="footer-logo" />
           <h1 class="footer-title">
@@ -207,24 +213,32 @@
           <div class="footer-nav">
             <ul class="nav-list list-2 nav-list-footer">
               <li class="nav-item nav-item-footer">
-                <a href="#" class="nav-link active">Home</a>
+                <a href="#home" class="nav-link to-home active">Home</a>
               </li>
               <li class="nav-item nav-item-footer">
-                <a href="#" class="nav-link nav-link-footer">Hardware</a>
+                <a href="#hardware" class="nav-link to-hardware nav-link-footer"
+                  >Hardware</a
+                >
               </li>
               <li class="nav-item nav-item-footer">
-                <a href="#" class="nav-link nav-link-footer">Games</a>
+                <a href="#games" class="nav-link to-games nav-link-footer"
+                  >Games</a
+                >
               </li>
               <li class="nav-item nav-item-footer">
-                <a href="#" class="nav-link nav-link-footer">Shop</a>
+                <a href="#shop" class="nav-link to-shop nav-link-footer"
+                  >Shop</a
+                >
               </li>
               <li class="nav-item nav-item-footer">
-                <a href="#" class="nav-link nav-link-footer">Support</a>
+                <a href="#footer" class="nav-link to-support nav-link-footer"
+                  >Support</a
+                >
               </li>
             </ul>
           </div>
         </div>
-      </footer>
+      </section>
       <div class="logIn-container">
         <form class="log-form">
           <div class="close-icon">
@@ -232,19 +246,13 @@
           </div>
 
           <h1 class="form-title">Log In</h1>
-          <input type="email" class="form-mail" />
-          <input type="password" class="form-password" />
+          <input type="email" class="form-mail" placeholder="E-Mail" />
+          <input type="password" class="form-password" placeholder="Password" />
           <button class="log-button btn-1">Log In</button>
         </form>
+        <div class="log-background"></div>
       </div>
     </div>
-    <div class="cookie">
-      <p class="cookie-text">
-        we use cookie for improving your user experience
-      </p>
-      <button class="btn-2 cookie-btn">Got it!</button>
-    </div>
-
     <script src="script.js"></script>
   </body>
 </html>

@@ -39,7 +39,7 @@ body {
   background-color: #c44a76;
 }
 
-.inactive{
+.inactive {
   display: none;
 }
 /* HOME */
@@ -567,15 +567,25 @@ hr {
 
 /* Log-in */
 .logIn-container {
+  width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #2d2d2d75;
   display: none;
   align-items: center;
   justify-content: center;
+  z-index: 10;
+}
+
+.log-background {
+  background-color: #2d2d2d75;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
 }
 
 .log-form {
@@ -709,6 +719,7 @@ hr {
     right: -100%;
     top: 0;
     width: 50%;
+    z-index: 8;
     height: 100%;
     flex-direction: column;
     background-color: #2d2d2d;
@@ -725,7 +736,7 @@ hr {
 
   .menu-container {
     display: block;
-    z-index: 10;
+    z-index: 9;
   }
 
   .menu {
