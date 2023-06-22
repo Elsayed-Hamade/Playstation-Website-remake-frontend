@@ -22,26 +22,26 @@
   <body>
     <div class="container">
       <!-- Home Section -->
-      <section class="home">
+      <section class="home" id="home">
         <nav class="navbar">
           <a href="#home" class="logo">
             <img src="Assets/Logo.svg" alt="Logo" />
           </a>
           <ul class="nav-list list-1">
             <li class="nav-item list-1-item">
-              <a href="#home" class="nav-link to-home active">Home</a>
+              <a href="#home" class="nav-link active">Home</a>
             </li>
             <li class="nav-item list-1-item">
-              <a href="#hardware" class="nav-link to-hardware">Hardware</a>
+              <a href="#hardware" class="nav-link">Hardware</a>
             </li>
             <li class="nav-item list-1-item">
-              <a href="#games" class="nav-link to-games">Games</a>
+              <a href="#games" class="nav-link">Games</a>
             </li>
             <li class="nav-item list-1-item">
-              <a href="#shop" class="nav-link to-shop">Shop</a>
+              <a href="#shop" class="nav-link">Shop</a>
             </li>
             <li class="nav-item list-1-item">
-              <a href="#footer" class="nav-link to-support">Support</a>
+              <a href="#support" class="nav-link">Support</a>
             </li>
             <button
               class="log-in-btn-small list-1-item btn-1 log-btn-activator"
@@ -68,7 +68,7 @@
               worlds with VR
             </p>
           </div>
-          <button class="btn-1">Shop</button>
+          <a class="btn-1 shop-link" href="#shop">Shop</a>
         </div>
         <img
           src="Assets/Hardware/home-controller.png"
@@ -77,7 +77,7 @@
         />
       </section>
       <!-- Hardware Section-->
-      <section class="hardware">
+      <section class="hardware" id="hardware">
         <div class="title hardware-title">
           <p class="small-title hardware-small-title">HARDWARE</p>
           <h1 class="big-title hardware-big-title">Best Gaming Tech</h1>
@@ -85,9 +85,10 @@
         <div class="hardware-cards">
           <div class="card">
             <img
-              src="Assets/Hardware/Controller 2.png"
+              src="Assets/Hardware/Controller2.png"
+              data-src="Assets/Hardware/Controller.png"
               alt=""
-              class="card-img"
+              class="card-img lazy-img"
             />
             <div class="card-content">
               <i class="fa-solid fa-gamepad hardware-card-icon"></i>
@@ -96,7 +97,7 @@
                 Customize Your Own Gaming Controller For PS5, PS4 And
                 Accessories To Suit Your Style And Performance.
               </p>
-              <button class="hardware-card-btn btn-2">Customize</button>
+              <a class="hardware-card-btn btn-2">Customize</a>
             </div>
           </div>
 
@@ -108,13 +109,14 @@
                 Experience The Next Level Of Gaming Audio With The PULSE 3D
                 Wireless Headset For PS5
               </p>
-              <button class="hardware-card-btn btn-2">Shop</button>
+              <a href="#shop" class="hardware-card-btn btn-2 shop-link">Shop</a>
             </div>
 
             <img
               alt="Headset"
-              class="card-img img-2"
-              src="Assets/Hardware/Headphones.png"
+              class="card-img img-2 lazy-img"
+              src="Assets/Hardware/Headphones2.png"
+              data-src="Assets/Hardware/Headphones.png"
             />
           </div>
         </div>
@@ -123,7 +125,7 @@
       </section>
 
       <!-- Games Section -->
-      <section class="games">
+      <section class="games" id="games">
         <div class="title games-title">
           <p class="small-title games-small-title">GAMES</p>
           <h1 class="big-title games-big-title">Latest Games</h1>
@@ -131,10 +133,18 @@
 
         <div class="carousel">
           <div class="games-carousel-btn">
-            <button class="carousel-ps5 carousel-btn">PS5</button>
-            <button class="carousel-ps4 carousel-btn">PS4</button>
+            <button
+              class="carousel-ps5 carousel-btn active-carousel-btn"
+              data-playstation="5"
+            >
+              PS5
+            </button>
+            <button class="carousel-ps4 carousel-btn" data-playstation="4">
+              PS4
+            </button>
           </div>
-          <div class="games-carousel">
+          <!-- PS5  -->
+          <div class="games-carousel ps5 active-playstation">
             <button class="games-left-arrow arrow-left arrow">
               <i class="fa-solid fa-angle-left"></i>
             </button>
@@ -153,7 +163,44 @@
                 <h4 class="game-price">
                   Price : <span class="price"> $69.99</span>
                 </h4>
-                <button class="game-buy-btn">Buy</button>
+                <a
+                  class="game-buy-btn"
+                  href="https://www.playstation.com/en-us/games/god-of-war-ragnarok/"
+                  target="_blank"
+                  >Buy</a
+                >
+              </div>
+            </div>
+            <button class="games-right-arrow arrow-right arrow">
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
+          </div>
+          <!-- PS4 -->
+          <div class="games-carousel ps4">
+            <button class="games-left-arrow arrow-left arrow">
+              <i class="fa-solid fa-angle-left"></i>
+            </button>
+            <div class="games-types">
+              <img
+                src="Assets/Games/Horizon Forbidden.jpg"
+                alt="God Of War"
+                class="game-img"
+              />
+              <div class="games-types-content">
+                <h1 class="game-title">Horizon Forbidden West™</h1>
+                <p class="game-text">
+                  Join Aloy as she braves the Forbidden West a majestic but
+                  dangerous frontier that conceals mysterious new threats.
+                </p>
+                <h4 class="game-price">
+                  Price : <span class="price"> $69.99</span>
+                </h4>
+                <a
+                  class="game-buy-btn"
+                  href="https://www.playstation.com/en-us/games/horizon-forbidden-west/"
+                  target="_blank"
+                  >Buy</a
+                >
               </div>
             </div>
             <button class="games-right-arrow arrow-right arrow">
@@ -165,7 +212,7 @@
         <hr />
       </section>
 
-      <section class="shop">
+      <section class="shop" id="shop">
         <div class="title shop-title">
           <p class="small-title shop-small-title">SHOP</p>
           <h1 class="big-title shop-big-title">Best Gaming Tech</h1>
@@ -200,7 +247,7 @@
         </div>
       </section>
 
-      <section class="footer">
+      <section class="footer" id="support">
         <div class="footer-content">
           <img src="Assets/Logo.svg" alt="Logo" class="footer-logo" />
           <h1 class="footer-title">
@@ -213,27 +260,21 @@
           <div class="footer-nav">
             <ul class="nav-list list-2 nav-list-footer">
               <li class="nav-item nav-item-footer">
-                <a href="#home" class="nav-link to-home active">Home</a>
+                <a href="#home" class="nav-link active">Home</a>
               </li>
               <li class="nav-item nav-item-footer">
-                <a href="#hardware" class="nav-link to-hardware nav-link-footer"
+                <a href="#hardware" class="nav-link nav-link-footer"
                   >Hardware</a
                 >
               </li>
               <li class="nav-item nav-item-footer">
-                <a href="#games" class="nav-link to-games nav-link-footer"
-                  >Games</a
-                >
+                <a href="#games" class="nav-link nav-link-footer">Games</a>
               </li>
               <li class="nav-item nav-item-footer">
-                <a href="#shop" class="nav-link to-shop nav-link-footer"
-                  >Shop</a
-                >
+                <a href="#shop" class="nav-link nav-link-footer">Shop</a>
               </li>
               <li class="nav-item nav-item-footer">
-                <a href="#footer" class="nav-link to-support nav-link-footer"
-                  >Support</a
-                >
+                <a href="#support" class="nav-link nav-link-footer">Support</a>
               </li>
             </ul>
           </div>

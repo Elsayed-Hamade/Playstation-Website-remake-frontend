@@ -101,11 +101,11 @@ body {
   margin: 0 3rem;
   font-size: 2rem;
   font-weight: 600;
-  color: #acacac;
+  color: #ffffff;
+  transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
 }
-
-.nav-list > .nav-item > a.active {
-  color: #707070;
+.nav-list > .nav-item > a:hover {
+  color: #ffbbbb;
 }
 
 /* HOME -> content */
@@ -168,6 +168,9 @@ body {
 }
 
 /* HARDWARE */
+.hardware {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
 .title {
   color: white;
   text-align: center;
@@ -262,6 +265,9 @@ hr {
 }
 
 /* GAMES*/
+.games {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
 .carousel {
   max-width: 90rem;
   margin: 0 auto;
@@ -289,14 +295,14 @@ hr {
   border-radius: 1rem;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
-  margin-left: 0.5rem;
+  margin: 0 1rem;
 }
 .carousel-btn:hover {
-  background-color: #a34366;
+  background-color: #ff5493;
 }
 
 .games-carousel {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -346,7 +352,7 @@ hr {
   margin-left: 1rem;
 }
 
-.games-types-content > button {
+.games-types-content > a {
   background-color: #37a18f;
   border: none;
   font-family: "poppins", sans-serif;
@@ -358,7 +364,7 @@ hr {
   transition: background 0.3s ease-in-out;
 }
 
-.games-types-content > button:hover {
+.games-types-content > a:hover {
   background-color: #297569;
 }
 
@@ -392,6 +398,7 @@ hr {
 .shop {
   max-width: 100rem;
   margin: 0 auto;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 .shop-carousel {
   display: flex;
@@ -518,6 +525,8 @@ hr {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
 }
 
 .footer-logo {
@@ -644,6 +653,7 @@ hr {
   background: url(Assets/Background.png);
   background-position: bottom;
   background-size: cover;
+  z-index: 20;
 }
 
 .cookie > .btn-2 {
@@ -863,4 +873,37 @@ hr {
     right: 50%;
     transform: translate(-50%, -50%);
   }
+}
+
+/* Functionality Styling */
+.active-carousel-btn {
+  background-color: #ff4f90;
+  scale: 1.1;
+  transition: scale 0.3s ease-in-out;
+}
+
+.active-playstation {
+  display: flex;
+}
+
+.nl-fade {
+  opacity: 0.5;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  background-color: #2d2d2d;
+  padding: 1rem 4rem;
+  transition: all 0.3s ease-in;
+  z-index: 100;
+}
+
+.section-hidden {
+  opacity: 0;
+  transform: translateY(9rem);
+}
+
+.lazy-img{
+  filter: blur(10px);
 }

@@ -1,9 +1,24 @@
 "use static";
-// Menu Func.
+const carouselBtns = document.querySelectorAll(".carousel-btn");
+const carouselBtnsContainer = document.querySelector(".games-carousel-btn");
+const gamesCarousel = document.querySelectorAll(".games-carousel");
 const menu = document.querySelector(".menu-container");
 const menuIcon = document.querySelector(".menu");
 const navList = document.querySelector(".list-1");
+const logBtn = document.querySelectorAll(".log-btn-activator");
+const logContainer = document.querySelector(".logIn-container");
+const logBackground = document.querySelector(".log-background");
+const LogClose = document.querySelector(".log-close");
+const home = document.querySelector(".home");
+const sections = [
+  document.querySelector(".hardware"),
+  document.querySelector(".games"),
+  document.querySelector(".shop"),
+  document.querySelector(".footer"),
+];
+const navbar = document.querySelector(".navbar");
 
+// Menu Func.
 menu.addEventListener("click", () => {
   navList.classList.toggle("active");
   if (navList.classList.contains("active")) {
@@ -14,11 +29,6 @@ menu.addEventListener("click", () => {
 });
 
 // Log Close, open
-const logBtn = document.querySelectorAll(".log-btn-activator");
-const logContainer = document.querySelector(".logIn-container");
-const logBackground = document.querySelector(".log-background");
-const LogClose = document.querySelector(".log-close");
-
 logBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     logContainer.style.display = "flex";
@@ -46,27 +56,120 @@ cookieBtn.addEventListener("click", () => {
 });
 
 // scrolling
-const home = document.querySelector(".home");
-const toHome = document.querySelectorAll(".to-home");
-const hardware = document.querySelector(".hardware");
-const toHardware = document.querySelectorAll(".to-hardware");
-const games = document.querySelector(".games");
-const toGames = document.querySelectorAll(".to-games");
-const shop = document.querySelector(".shop");
-const toShop = document.querySelectorAll(".to-shop");
-const support = document.querySelector(".footer");
-const toSupport = document.querySelectorAll(".to-support");
+const shopLinks = document.querySelectorAll(".shop-link");
+const navLists = document.querySelectorAll(".nav-list");
 
-const scrollFunc = (btns, section) => {
-  btns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      section.scrollIntoView({ behavior: "smooth" });
-    });
+shopLinks.forEach(function (shopLink) {
+  shopLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    const id = this.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   });
-};
+});
 
-scrollFunc(toHome, home);
-scrollFunc(toHardware, hardware);
-scrollFunc(toGames, games);
-scrollFunc(toShop, shop);
-scrollFunc(toSupport, support);
+navLists.forEach((nav) =>
+  nav.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (e.target.classList.contains("nav-link")) {
+      const id = e.target.getAttribute("href");
+      document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+    }
+  })
+);
+
+// carousel change
+
+carouselBtnsContainer.addEventListener("click", (e) => {
+  const clicked = e.target;
+  carouselBtns.forEach((btn) => btn.classList.remove("active-carousel-btn"));
+  clicked.classList.add("active-carousel-btn");
+  gamesCarousel.forEach((game) => game.classList.remove("active-playstation"));
+  document
+    .querySelector(`.ps${clicked.dataset.playstation}`)
+    .classList.add("active-playstation");
+});
+
+// nav items fade
+const fade = (order, e) => {
+  if (e.target.classList.contains("nav-link")) {
+    const link = e.target;
+    const linkSiblings = link
+      .closest(".nav-list")
+      .querySelectorAll(".nav-link");
+    linkSiblings.forEach((linkSibling) => {
+      if (linkSibling !== link) {
+        if (order === "add") {
+          linkSibling.classList.add("nl-fade");
+        } else {
+          linkSibling.classList.remove("nl-fade");
+        }
+      }
+    });
+  }
+};
+navLists.forEach((nl) =>
+  nl.addEventListener("mouseover", (e) => {
+    fade("add", e);
+  })
+);
+navLists.forEach((nl) =>
+  nl.addEventListener("mouseout", (e) => {
+    fade("remove", e);
+  })
+);
+
+// Navbar fixed
+const stickyNav = (entries) => {
+  const [entry] = entries;
+  console.log(entry);
+  if (!entry.isIntersecting) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
+  }
+};
+const homeObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+});
+
+homeObserver.observe(home);
+
+// Section reveal
+const reveal = (entries, observer) => {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.remove("section-hidden");
+  observer.unobserve(entry.target);
+};
+const sectionObserver = new IntersectionObserver(reveal, {
+  root: null,
+  threshold: 0.3,
+});
+
+sections.forEach((sec) => {
+  sec.classList.add("section-hidden");
+  sectionObserver.observe(sec);
+});
+
+// lazy loading
+const lazyImgs = document.querySelectorAll("img[data-src]");
+const lazyFunc = (entries, observer) => {
+  const [entry] = entries;
+  console.log(entry);
+  if (!entry.isIntersecting) return;
+
+  entry.target.src = entry.target.dataset.src;
+  
+  entry.target.addEventListener("load", () => {
+    entry.target.classList.remove("lazy-img");
+  });
+  
+  observer.unobserve(e.target)
+};
+const lazyObserver = new IntersectionObserver(lazyFunc, {
+  root: null,
+  threshold: .1,
+});
+lazyImgs.forEach((img) => lazyObserver.observe(img));
