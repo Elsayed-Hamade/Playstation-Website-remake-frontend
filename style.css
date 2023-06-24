@@ -309,7 +309,7 @@ hr {
 
 .games-types {
   max-width: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 5rem;
@@ -526,7 +526,6 @@ hr {
   background-repeat: no-repeat;
   background-size: cover;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-
 }
 
 .footer-logo {
@@ -904,6 +903,10 @@ hr {
   transform: translateY(9rem);
 }
 
-.lazy-img{
+.lazy-img {
   filter: blur(10px);
+}
+
+.active-game {
+  display: flex;
 }

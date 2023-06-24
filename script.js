@@ -77,18 +77,6 @@ navLists.forEach((nav) =>
   })
 );
 
-// carousel change
-
-carouselBtnsContainer.addEventListener("click", (e) => {
-  const clicked = e.target;
-  carouselBtns.forEach((btn) => btn.classList.remove("active-carousel-btn"));
-  clicked.classList.add("active-carousel-btn");
-  gamesCarousel.forEach((game) => game.classList.remove("active-playstation"));
-  document
-    .querySelector(`.ps${clicked.dataset.playstation}`)
-    .classList.add("active-playstation");
-});
-
 // nav items fade
 const fade = (order, e) => {
   if (e.target.classList.contains("nav-link")) {
@@ -121,7 +109,6 @@ navLists.forEach((nl) =>
 // Navbar fixed
 const stickyNav = (entries) => {
   const [entry] = entries;
-  console.log(entry);
   if (!entry.isIntersecting) {
     navbar.classList.add("sticky");
   } else {
@@ -149,7 +136,7 @@ const sectionObserver = new IntersectionObserver(reveal, {
 });
 
 sections.forEach((sec) => {
-  sec.classList.add("section-hidden");
+  // sec.classList.add("section-hidden");
   sectionObserver.observe(sec);
 });
 
@@ -157,19 +144,60 @@ sections.forEach((sec) => {
 const lazyImgs = document.querySelectorAll("img[data-src]");
 const lazyFunc = (entries, observer) => {
   const [entry] = entries;
-  console.log(entry);
   if (!entry.isIntersecting) return;
 
   entry.target.src = entry.target.dataset.src;
-  
+
   entry.target.addEventListener("load", () => {
     entry.target.classList.remove("lazy-img");
   });
-  
-  observer.unobserve(e.target)
+
+  // observer.unobserve(e.target);
 };
 const lazyObserver = new IntersectionObserver(lazyFunc, {
   root: null,
-  threshold: .1,
+  threshold: 0.1,
 });
 lazyImgs.forEach((img) => lazyObserver.observe(img));
+
+// Slider
+const gamesPs5 = document
+  .querySelector(".ps5")
+  .querySelectorAll(".games-types");
+
+const gamesRightArrow = document.querySelector(".games-right-arrow");
+const gamesLeftArrow = document.querySelector(".games-left-arrow");
+
+const addTransform = (games) => {
+  games.forEach((game, i) => {
+    game.style.transform = `translateX(${100 * i}%)`;
+  });
+};
+addTransform(gamesPs5);
+
+let countSlide = 0;
+const gameLength = gamesPs5.length;
+const goToSlide = (curSlide) => {
+  gamesPs5[curSlide - 1].classList.remove("active-game");
+  gamesPs5[curSlide].classList.add("active-game");
+  gamesPs5.forEach((game, i) => {
+    game.style.transform = `translateX(${100 * (i - curSlide)}%)`;
+  });
+};
+
+const nextSlide = () => {
+  if (countSlide === gameLength - 1) {
+    countSlide = 0;
+  } else {
+    countSlide++;
+  }
+  if (countSlide === 0) {
+    gamesPs5[2].classList.remove("active-game");
+    gamesPs5[0].classList.add("active-game");
+    gamesPs5[0].style.transform = "translateX(0%)";
+  } else {
+    goToSlide(countSlide);
+  }
+};
+
+gamesRightArrow.addEventListener("click", nextSlide);
