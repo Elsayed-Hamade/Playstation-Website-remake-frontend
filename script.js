@@ -177,3 +177,19 @@ SliderButtons.forEach((btn) => {
     activeSlide.classList.remove("active-game")
   });
 });
+
+const SliderButtonsProducts = document.querySelectorAll(".shop-arrow");
+
+SliderButtonsProducts.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const offset = btn.dataset.btn === "next" ? 1 : -1;
+    const slides = document.querySelector(".products-container");
+    const activeSlide = slides.querySelector(".active-product");
+    let index = [...slides.children].indexOf(activeSlide) + offset;
+    if (index < 0) index = slides.children.length - 1;
+    if (index >= slides.children.length) index = 0;
+
+    slides.children[index].classList.add("active-product")
+    activeSlide.classList.remove("active-product")
+  });
+});

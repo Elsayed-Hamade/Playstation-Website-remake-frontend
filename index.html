@@ -233,31 +233,54 @@
         </div>
 
         <div class="shop-carousel">
-          <button class="shop-left-arrow">
+          <button class="shop-left-arrow shop-arrow" data-btn="prev">
             <i class="fa-solid fa-angle-left"></i>
           </button>
 
-          <div class="products">
-            <img
-              src="Assets/Hardware/Headphones.png"
-              alt="Headphones"
-              class="product-img"
-            />
-            <div class="products-content">
-              <h1 class="product-name">PULSE 3D™ Wireless Headset</h1>
-              <h5 class="product-price">Price : <span> $69.99</span></h5>
-              <button class="product-buy-btn">Buy</button>
-            </div>
-            <div class="products-items">
-              <div class="item item1 active"></div>
-              <div class="item item2"></div>
-              <div class="item item3"></div>
-            </div>
-          </div>
-
-          <button class="shop-right-arrow">
+          <button class="shop-right-arrow shop-arrow" data-btn="next">
             <i class="fa-solid fa-angle-right"></i>
           </button>
+          <ul class="products-container">
+            <!-- 1 -->
+            <li class="products active-product" >
+              <img
+                src="Assets/Hardware/Headphones.png"
+                alt="Headphones"
+                class="product-img"
+              />
+              <div class="products-content">
+                <h1 class="product-name">PULSE 3D™ Wireless Headset</h1>
+                <h5 class="product-price">Price : <span> $69.99</span></h5>
+                <button class="product-buy-btn">Buy</button>
+              </div>
+            </li>
+            <!-- 2 -->
+            <li class="products">
+              <img
+                src="Assets/Hardware/VR.png"
+                alt="Headphones"
+                class="product-img"
+              />
+              <div class="products-content">
+                <h1 class="product-name">Playstation VR</h1>
+                <h5 class="product-price">Price : <span> $369.99</span></h5>
+                <button class="product-buy-btn">Buy</button>
+              </div>
+            </li>
+            <!-- 3 -->
+            <li class="products">
+              <img
+                src="Assets/Hardware/Controller.png"
+                alt="Headphones"
+                class="product-img"
+              />
+              <div class="products-content">
+                <h1 class="product-name">Customized Controller</h1>
+                <h5 class="product-price">Price : <span> $29.99</span></h5>
+                <button class="product-buy-btn">Buy</button>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
 
