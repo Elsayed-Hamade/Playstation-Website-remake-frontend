@@ -133,20 +133,21 @@
 
         <div class="carousel">
           <div class="games-carousel-btn">
-            <button
-              class="carousel-ps5 carousel-btn"
-              data-playstation="5"
-            >
+            <button class="carousel-ps5 carousel-btn" data-playstation="5">
               PS5
             </button>
           </div>
           <!-- PS5  -->
-          <button class="games-left-arrow arrow-left arrow">
+
+          <button class="games-left-arrow arrow-left arrow" data-btn="prev">
             <i class="fa-solid fa-angle-left"></i>
           </button>
-          <div class="games-carousel ps5 active-playstation">
+          <button class="games-right-arrow arrow-right arrow" data-btn="next">
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+          <ul class="games-carousel ps5 active-playstation">
             <!-- 1 -->
-            <div class="games-types active-game">
+            <li class="games-types active-game">
               <img
                 src="Assets/Games/God of War.jpg"
                 alt="God Of War"
@@ -168,9 +169,9 @@
                   >Buy</a
                 >
               </div>
-            </div>
+            </li>
             <!-- 2 -->
-            <div class="games-types">
+            <li class="games-types">
               <img
                 src="Assets/Games/The Last of Us.jpg"
                 alt="The Last Of US"
@@ -192,9 +193,9 @@
                   >Buy</a
                 >
               </div>
-            </div>
+            </li>
             <!-- 3 -->
-            <div class="games-types">
+            <li class="games-types">
               <img
                 src="Assets/Games/Spider-Man.jpg"
                 alt="spider Man"
@@ -217,12 +218,9 @@
                   >Buy</a
                 >
               </div>
-            </div>
+            </li>
             <!-- arrow -->
-          </div>
-          <button class="games-right-arrow arrow-right arrow">
-            <i class="fa-solid fa-angle-right"></i>
-          </button>
+          </ul>
         </div>
 
         <hr />

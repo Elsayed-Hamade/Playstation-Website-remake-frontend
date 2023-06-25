@@ -161,43 +161,19 @@ const lazyObserver = new IntersectionObserver(lazyFunc, {
 lazyImgs.forEach((img) => lazyObserver.observe(img));
 
 // Slider
-const gamesPs5 = document
-  .querySelector(".ps5")
-  .querySelectorAll(".games-types");
 
-const gamesRightArrow = document.querySelector(".games-right-arrow");
-const gamesLeftArrow = document.querySelector(".games-left-arrow");
+const SliderButtons = document.querySelectorAll(".arrow");
 
-const addTransform = (games) => {
-  games.forEach((game, i) => {
-    game.style.transform = `translateX(${100 * i}%)`;
+SliderButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const offset = btn.dataset.btn === "next" ? 1 : -1;
+    const slides = document.querySelector(".games-carousel");
+    const activeSlide = slides.querySelector(".active-game");
+    let index = [...slides.children].indexOf(activeSlide) + offset;
+    if (index < 0) index = slides.children.length - 1;
+    if (index >= slides.children.length) index = 0;
+
+    slides.children[index].classList.add("active-game")
+    activeSlide.classList.remove("active-game")
   });
-};
-addTransform(gamesPs5);
-
-let countSlide = 0;
-const gameLength = gamesPs5.length;
-const goToSlide = (curSlide) => {
-  gamesPs5[curSlide - 1].classList.remove("active-game");
-  gamesPs5[curSlide].classList.add("active-game");
-  gamesPs5.forEach((game, i) => {
-    game.style.transform = `translateX(${100 * (i - curSlide)}%)`;
-  });
-};
-
-const nextSlide = () => {
-  if (countSlide === gameLength - 1) {
-    countSlide = 0;
-  } else {
-    countSlide++;
-  }
-  if (countSlide === 0) {
-    gamesPs5[2].classList.remove("active-game");
-    gamesPs5[0].classList.add("active-game");
-    gamesPs5[0].style.transform = "translateX(0%)";
-  } else {
-    goToSlide(countSlide);
-  }
-};
-
-gamesRightArrow.addEventListener("click", nextSlide);
+});
